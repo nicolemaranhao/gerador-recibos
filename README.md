@@ -1,328 +1,541 @@
 # 🧾 Recibo Fácil
 
-**Sistema profissional de emissão e gerenciamento de recibos**
+### Plataforma web para emissão e gerenciamento de recibos digitais
 
-Desenvolvido com Streamlit, SQLite, ReportLab e Python puro - perfeito para aprender desenvolvimento full-stack.
+O **Recibo Fácil** é uma aplicação web desenvolvida em Python para criar, armazenar, consultar, editar e gerar recibos digitais em PDF.
 
----
+O projeto foi desenvolvido com o objetivo de praticar, de forma integrada, conceitos de **desenvolvimento web, programação em Python, banco de dados, SQL, validação de dados, geração de documentos, testes automatizados e organização de software**.
 
-## 📋 Características
-
-✅ **Dashboard** com estatísticas em tempo real  
-✅ **Criação de recibos** com validação completa  
-✅ **Geração de PDF** profissional  
-✅ **Histórico** com pesquisa e filtros  
-✅ **Edição** de recibos já criados  
-✅ **Exclusão** com confirmação de segurança  
-✅ **Configurações** personalizáveis  
-✅ **Banco de dados** SQLite persistente  
-✅ **Testes automatizados** (21 testes)  
-✅ **Interface responsiva** e profissional
+A aplicação simula uma plataforma real de gerenciamento de recibos, permitindo acompanhar os documentos criados e acessar seus dados posteriormente.
 
 ---
 
-## 🚀 Instalação Rápida
+## 📸 Demonstração
 
-### 1. Pré-requisitos
+### 📊 Painel de controle
 
-- Python 3.8+
-- pip (gerenciador de pacotes)
+Tela principal da aplicação, desenvolvida para facilitar o acesso às funcionalidades do sistema.
 
-### 2. Clonar ou copiar os arquivos
+![Painel de controle](docs/painelcontrolerecibos.png)
 
-```bash
-cd gerador-recibos
-```
+### 📝 Cadastro de recibo
 
-### 3. Criar ambiente virtual (opcional mas recomendado)
+Tela utilizada para preencher os dados necessários para emissão de um recibo, incluindo informações do pagador, pagamento e recebedor.
 
-```bash
-python -m venv .venv
-```
+![Dados do pagamento](docs/dadospagamentorecibos.png)
+
+### 📋 Histórico de recibos
+
+Área destinada à consulta dos recibos cadastrados, permitindo pesquisar e localizar documentos emitidos anteriormente.
+
+![Histórico de recibos](docs/historicorecibos.png)
+
+### 🧾 Recibo gerado
+
+Após o preenchimento e validação dos dados, o sistema apresenta o recibo pronto para visualização, download e impressão.
+
+![Recibo gerado](docs/reciborecibos.png)
+
+---
+
+## 🚀 Funcionalidades
+
+### 🧾 Emissão de recibos
+
+- Cadastro de dados do pagador
+- Cadastro de dados do recebedor
+- CPF/CNPJ
+- Valor recebido
+- Data do pagamento
+- Descrição do pagamento ou serviço
+- Forma de pagamento
+- Numeração automática dos recibos
+- Pré-visualização dos dados
+
+### 🔎 Gerenciamento
+
+- Histórico de recibos
+- Pesquisa de recibos
+- Consulta de registros
+- Visualização de recibos
+- Edição de recibos
+- Exclusão de registros
+- Identificação individual por número de recibo
+
+### 📄 Documentos
+
+- Geração de recibos em PDF
+- Layout estruturado para impressão
+- Download do documento
+- Impressão do recibo
+- Organização dos PDFs gerados
+
+### 🛡️ Validação
+
+- Validação de CPF
+- Validação de CNPJ
+- Validação de campos obrigatórios
+- Validação de valores
+- Tratamento de campos opcionais
+- Tratamento de erros da aplicação
+
+### 🗄️ Persistência
+
+- Banco de dados SQLite
+- Armazenamento persistente dos recibos
+- Consultas SQL
+- Operações CRUD
+- Numeração sequencial dos recibos
+
+### 🧪 Qualidade
+
+- Testes automatizados
+- Testes de validação
+- Testes de banco de dados
+- Testes de geração de PDF
+- Teste do fluxo completo
+- Organização modular do código
+- Tratamento de exceções
+
+---
+
+## 🛠️ Tecnologias utilizadas
+
+| Tecnologia   | Utilização                              |
+| ------------ | --------------------------------------- |
+| 🐍 Python    | Linguagem principal do projeto          |
+| 🎨 Streamlit | Desenvolvimento da interface web        |
+| 🗄️ SQLite    | Banco de dados relacional               |
+| 🔎 SQL       | Consultas e manipulação dos dados       |
+| 📄 ReportLab | Geração dos documentos PDF              |
+| 🧪 unittest  | Testes automatizados                    |
+| 🌐 HTML      | Estrutura e personalização da interface |
+| 🎨 CSS       | Estilização da aplicação                |
+| 🔧 Git       | Controle de versão                      |
+| ☁️ GitHub    | Versionamento e publicação do código    |
+
+---
+
+## 🏗️ Arquitetura da aplicação
+
+O projeto foi dividido em módulos para separar responsabilidades, facilitar a manutenção e permitir a evolução da aplicação.
+
+**Fluxo da aplicação:**
+
+**Usuário → Streamlit → Validações → Banco de dados → Geração de PDF → Download/Impressão**
+
+### Componentes principais
+
+| Componente        | Responsabilidade                            |
+| ----------------- | ------------------------------------------- |
+| `app.py`          | Interface, formulários e fluxo da aplicação |
+| `validacoes.py`   | Validação dos dados                         |
+| `formatadores.py` | Formatação de valores, documentos e datas   |
+| `database.py`     | Comunicação com o SQLite                    |
+| `gerador_pdf.py`  | Geração dos recibos em PDF                  |
+| `test_sistema.py` | Testes automatizados                        |
+
+---
+
+## 📁 Estrutura do projeto
+
+- `docs/` — imagens utilizadas na documentação
+  - `painelcontrolerecibos.png`
+  - `dadospagamentorecibos.png`
+  - `historicorecibos.png`
+  - `reciborecibos.png`
+- `app.py` — aplicação principal
+- `database.py` — camada de banco de dados
+- `validacoes.py` — validações
+- `formatadores.py` — formatação dos dados
+- `gerador_pdf.py` — geração de PDF
+- `test_sistema.py` — testes automatizados
+- `requirements.txt` — dependências
+- `README.md` — documentação
+- `.gitignore` — arquivos ignorados pelo Git
+
+---
+
+## 📂 Responsabilidade dos arquivos
+
+### `app.py`
+
+Arquivo principal da aplicação.
+
+Responsável por:
+
+- Interface
+- Formulários
+- Navegação
+- Interação com o usuário
+- Gerenciamento do fluxo
+- Integração dos módulos
+
+### `database.py`
+
+Responsável pela comunicação com o SQLite.
+
+Principais operações:
+
+- Conexão com o banco
+- Criação das tabelas
+- Inserção de recibos
+- Consulta
+- Pesquisa
+- Atualização
+- Exclusão
+- Numeração sequencial
+
+### `validacoes.py`
+
+Centraliza as regras de validação.
+
+Responsável por:
+
+- CPF
+- CNPJ
+- Campos obrigatórios
+- Valores
+- Dados do formulário
+
+### `formatadores.py`
+
+Responsável pela apresentação padronizada dos dados.
+
+Exemplo:
+
+**1500.50 → R$ 1.500,50**
+
+Também trabalha com:
+
+- Moeda
+- CPF
+- CNPJ
+- Datas
+- Valores por extenso
+
+### `gerador_pdf.py`
+
+Responsável pela criação dos recibos em PDF utilizando ReportLab.
+
+O módulo recebe os dados do recibo e gera o documento final para download e impressão.
+
+### `test_sistema.py`
+
+Contém os testes automatizados do sistema.
+
+São testados:
+
+- Validações
+- Formatação
+- Banco de dados
+- CRUD
+- Numeração dos recibos
+- Geração de PDF
+- Fluxo completo de criação
+
+---
+
+## 🗄️ Banco de dados
+
+O projeto utiliza **SQLite**, um banco de dados relacional leve para armazenamento persistente dos recibos.
+
+### Tabela `recibos`
+
+| Campo                 | Tipo      | Descrição              |
+| --------------------- | --------- | ---------------------- |
+| `id`                  | INTEGER   | Identificador único    |
+| `numero_recibo`       | TEXT      | Número do recibo       |
+| `pagador_nome`        | TEXT      | Nome do pagador        |
+| `pagador_documento`   | TEXT      | CPF/CNPJ do pagador    |
+| `valor`               | REAL      | Valor recebido         |
+| `data_pagamento`      | TEXT      | Data do pagamento      |
+| `descricao`           | TEXT      | Descrição do pagamento |
+| `forma_pagamento`     | TEXT      | Forma de pagamento     |
+| `recebedor_nome`      | TEXT      | Nome do recebedor      |
+| `recebedor_documento` | TEXT      | CPF/CNPJ do recebedor  |
+| `data_criacao`        | TIMESTAMP | Data de criação        |
+| `caminho_pdf`         | TEXT      | Caminho do PDF         |
+
+---
+
+## 🔐 Validação e segurança
+
+O sistema realiza verificações antes de armazenar os dados.
+
+Entre elas:
+
+- Validação de CPF e CNPJ
+- Verificação dos campos obrigatórios
+- Validação de valores
+- Tratamento de campos opcionais
+- Tratamento de exceções
+- Consultas SQL parametrizadas
+
+As consultas parametrizadas ajudam a reduzir riscos relacionados à inserção direta de valores nas consultas SQL.
+
+---
+
+## 🧪 Testes automatizados
+
+O projeto possui uma suíte de testes utilizando `unittest`.
+
+As principais áreas testadas são:
+
+- ✅ CPF
+- ✅ CNPJ
+- ✅ Formulários
+- ✅ Valores
+- ✅ Datas
+- ✅ Formatação
+- ✅ Banco de dados
+- ✅ CRUD
+- ✅ Numeração dos recibos
+- ✅ Geração de PDF
+- ✅ Fluxo completo
+
+### Executar os testes
+
+`python -m unittest test_sistema -v`
+
+---
+
+## ▶️ Como executar o projeto
+
+### 1. Clonar o repositório
+
+`git clone https://github.com/nicolemaranhao/gerador-recibos.git`
+
+### 2. Entrar na pasta
+
+`cd gerador-recibos`
+
+### 3. Criar o ambiente virtual
+
+`python -m venv .venv`
+
+### 4. Ativar o ambiente virtual
 
 **Windows:**
 
-```bash
-.venv\Scripts\activate
-```
+`.venv\Scripts\activate`
 
-**Linux/Mac:**
+**Linux/macOS:**
 
-```bash
-source .venv/bin/activate
-```
+`source .venv/bin/activate`
 
-### 4. Instalar dependências
+### 5. Instalar as dependências
 
-```bash
-pip install -r requirements.txt
-```
+`pip install -r requirements.txt`
 
-### 5. Executar a aplicação
+### 6. Executar os testes
 
-```bash
-streamlit run app.py
-```
+`python -m unittest test_sistema -v`
 
-A aplicação abrirá automaticamente no navegador em `http://localhost:8501`
+### 7. Executar a aplicação
+
+`streamlit run app.py`
+
+Após executar o comando, a aplicação será disponibilizada pelo Streamlit no navegador.
 
 ---
 
-## 📁 Estrutura do Projeto
+## 🔄 Fluxo principal
 
-```
-gerador-recibos/
-├── app.py                  # Aplicação principal (Streamlit)
-├── database.py             # Camada de banco de dados SQLite
-├── validacoes.py           # Validações de entrada
-├── formatadores.py         # Formatação de dados (moeda, data, documento)
-├── gerador_pdf.py          # Geração de PDF com ReportLab
-├── test_sistema.py         # Testes automatizados (21 testes)
-├── requirements.txt        # Dependências do projeto
-├── recibos.db              # Banco de dados SQLite (criado automaticamente)
-├── recibos_pdf/            # Pasta com PDFs gerados (criada automaticamente)
-└── config.json             # Configurações da empresa (criado ao salvar)
-```
+**1. Usuário preenche os dados**
 
----
+↓
 
-## 🎯 Como Usar
+**2. Sistema valida as informações**
 
-### Painel (Dashboard)
+↓
 
-- Visualize estatísticas: total de recibos, valor total recebido, recibos de hoje
-- Acesso rápido para criar novo recibo ou ver histórico
-- Mostra últimos 5 recibos criados
+**3. Dados são armazenados no SQLite**
 
-### Novo Recibo
+↓
 
-1. Preencha dados do pagador (nome, CPF/CNPJ)
-2. Preencha informações do pagamento (valor, data, descrição)
-3. Selecione forma de pagamento
-4. Preencha dados de quem recebeu
-5. Clique "Gerar recibo"
-6. Recibo é validado, PDF é gerado, dados são salvos
-7. Você é levado à página de visualização
+**4. Número do recibo é gerado**
 
-### Histórico
+↓
 
-- Pesquise por número, nome ou valor
-- Veja lista de todos os recibos
-- Clique em "Ver" para ir aos detalhes
+**5. PDF é criado**
 
-### Detalhes / Edição / Exclusão
+↓
 
-- **Aba Visualização**: Veja o recibo e baixe PDF
-- **Aba Editar**: Altere dados e regenere PDF
-- **Aba Excluir**: Delete com confirmação
+**6. Recibo é disponibilizado**
 
-### Configurações
+↓
 
-- Salve dados da sua empresa/pessoa
-- Esses dados podem ser usados em futuras melhorias
+**7. Usuário pode visualizar, baixar ou imprimir**
 
 ---
 
-## 🧪 Testes Automatizados
+## 📚 Principais aprendizados
 
-O projeto inclui **21 testes automatizados** cobrindo:
+### 🐍 Python
 
-- ✅ Validação de CPF/CNPJ
-- ✅ Validação de formulário completo
-- ✅ Formatação de moeda, data, documento
-- ✅ Geração de números sequenciais
-- ✅ CRUD completo (criar, ler, buscar, atualizar, excluir)
+- Funções
+- Módulos
+- Estruturas de dados
+- Tratamento de exceções
+- Manipulação de strings
+- Organização de código
+- Separação de responsabilidades
+
+### 🗄️ Banco de dados
+
+- SQLite
+- SQL
+- CRUD
+- SELECT
+- INSERT
+- UPDATE
+- DELETE
+- Filtros
+- Persistência
+
+### 🌐 Desenvolvimento web
+
+- Streamlit
+- Formulários
+- Componentes de interface
+- Gerenciamento de estado
+- HTML
+- CSS
+
+### 📄 Geração de documentos
+
+- ReportLab
+- Criação de PDF
+- Formatação de documentos
+- Organização de arquivos
+
+### 🧪 Testes
+
+- unittest
+- Testes unitários
+- Testes de integração
+- Validação de fluxos
+- Identificação de erros
+
+### 🔧 Engenharia de software
+
+- Modularização
+- Separação de responsabilidades
+- Tratamento de erros
+- Organização de projeto
+- Git
+- GitHub
+
+---
+
+## 💡 Decisões técnicas
+
+### Por que Python?
+
+Python foi utilizado como linguagem principal por sua legibilidade, facilidade de desenvolvimento e grande ecossistema de bibliotecas.
+
+### Por que Streamlit?
+
+O Streamlit permite desenvolver aplicações web utilizando Python, possibilitando construir uma interface funcional de maneira rápida.
+
+### Por que SQLite?
+
+O SQLite fornece um banco de dados relacional leve e adequado para uma aplicação local, sem necessidade de configurar um servidor externo.
+
+### Por que separar os módulos?
+
+A separação permite que cada módulo tenha uma responsabilidade específica, facilitando manutenção, testes, leitura do código e evolução do projeto.
+
+---
+
+## 📈 Possíveis evoluções
+
+- Dashboard com gráficos
+- Filtros avançados por período
+- Filtros por forma de pagamento
+- Exportação para CSV
+- Relatórios financeiros
+- Backup automático
+- Autenticação de usuários
+- Controle de permissões
+- Multiusuário
+- PostgreSQL
+- API REST
+- Deploy em nuvem
+- Tema claro/escuro
+- Sistema de auditoria
+- Melhorias de acessibilidade
+
+---
+
+## 🔮 Evolução futura
+
+Uma possível evolução da aplicação seria separar frontend e backend, permitindo transformar o projeto em uma solução preparada para múltiplos usuários.
+
+**Arquitetura futura:**
+
+**Frontend Web/Mobile → API → Backend Python → PostgreSQL**
+
+Essa arquitetura permitiria maior escalabilidade, autenticação, controle de permissões, integração com outros sistemas e implantação em ambientes de produção.
+
+---
+
+## 🎯 Objetivo do projeto
+
+O principal objetivo do Recibo Fácil foi transformar conhecimentos teóricos em uma aplicação prática e funcional.
+
+O projeto reúne diferentes áreas do desenvolvimento em uma única aplicação:
+
+**Python + SQL + Banco de Dados + Desenvolvimento Web + Validação + PDF + Testes + Git**
+
+Além de funcionar como aplicação, o projeto também foi utilizado como estudo prático de organização de código, persistência de dados, testes e desenvolvimento de software.
+
+---
+
+## 📌 Status do projeto
+
+**Versão 1.0 — funcional**
+
+Atualmente, o projeto possui:
+
+- ✅ Emissão de recibos
+- ✅ Validação de dados
+- ✅ Armazenamento em SQLite
+- ✅ Histórico
+- ✅ Pesquisa
+- ✅ Edição
+- ✅ Exclusão
 - ✅ Geração de PDF
-- ✅ Fluxo completo de criação
-
-### Rodar os testes
-
-```bash
-python -m unittest test_sistema -v
-```
-
-Todos os testes devem passar (21 OK).
+- ✅ Download
+- ✅ Impressão
+- ✅ Testes automatizados
 
 ---
 
-## 🗂️ Explicação dos Arquivos
+## 👩‍💻 Desenvolvedora
 
-### app.py
+### Nicole Maranhão
 
-Arquivo principal da aplicação Streamlit. Contém:
+Estudante de **Ciência da Computação**, com interesse em:
 
-- Sistema de navegação entre 6 páginas
-- Gerenciamento de sessão
-- Interface do usuário
-- Integração com todos os módulos
+- 🐍 Python
+- 🗄️ SQL
+- 📊 Dados
+- 🤖 Inteligência Artificial
+- 💻 Desenvolvimento de software
+- 📈 Business Intelligence
 
-**Páginas:**
-
-1. **Painel**: Dashboard
-2. **Novo Recibo**: Formulário
-3. **Recibo Gerado**: Visualização pós-criação
-4. **Histórico**: Lista e pesquisa
-5. **Detalhes**: Ver/editar/excluir
-6. **Configurações**: Personalização
-
-### database.py
-
-Camada de acesso aos dados SQLite. Funções:
-
-- `conectar()`: Cria conexão com o banco
-- `inicializar_banco()`: Cria tabela com migração automática
-- `gerar_numero_recibo()`: Gera REC-000001, REC-000002, etc
-- `salvar_recibo()`: Insere novo recibo
-- `buscar_recibos()`: Pesquisa com LIKE
-- `buscar_recibo_por_id()`: Busca específica
-- `atualizar_recibo()`: Edita recibo existente
-- `excluir_recibo()`: Deleta recibo
-- `obter_estatisticas()`: Retorna métricas
-
-### validacoes.py
-
-Validações de entrada:
-
-- `validar_documento()`: Verifica CPF (11 dig) ou CNPJ (14 dig)
-- `validar_formulario()`: Valida todos os campos do recibo
-
-### formatadores.py
-
-Formata dados para apresentação:
-
-- `formatar_moeda()`: 150.50 → "R$ 150,50"
-- `formatar_documento()`: 12345678900 → "123.456.789-00"
-- `formatar_data()`: Converte para "DD/MM/YYYY"
-- `valor_por_extenso()`: 15.0 → "quinze reais"
-
-### gerador_pdf.py
-
-Cria PDFs profissionais com ReportLab:
-
-- Desenha layout do recibo em A4
-- Inclui número, data, valor, partes
-- Salva em `recibos_pdf/REC-000001.pdf`
-
-### test_sistema.py
-
-Testes automatizados:
-
-- **TestValidacoes**: 7 testes
-- **TestFormatadores**: 6 testes
-- **TestDatabase**: 6 testes
-- **TestGeracaoPDF**: 1 teste
-- **TestFluxoCompleto**: 1 teste completo
+Este projeto faz parte da minha jornada de aprendizado e construção de portfólio na área de tecnologia.
 
 ---
 
-## 🔧 Estrutura do Banco de Dados
+## 🔗 Repositório
 
-**Tabela: recibos**
-
-| Campo               | Tipo       | Descrição           |
-| ------------------- | ---------- | ------------------- |
-| id                  | INTEGER PK | ID único            |
-| numero_recibo       | TEXT       | REC-000001          |
-| pagador_nome        | TEXT       | Nome de quem pagou  |
-| pagador_documento   | TEXT       | CPF/CNPJ            |
-| valor               | REAL       | Valor em reais      |
-| data_pagamento      | TEXT       | DD/MM/YYYY          |
-| descricao           | TEXT       | O que é o pagamento |
-| forma_pagamento     | TEXT       | PIX, Dinheiro, etc  |
-| recebedor_nome      | TEXT       | Quem recebeu        |
-| recebedor_documento | TEXT       | CPF/CNPJ (opcional) |
-| data_criacao        | TIMESTAMP  | Quando foi criado   |
-| caminho_pdf         | TEXT       | Caminho do PDF      |
-
----
-
-## 📚 Aprendizados
-
-Este projeto é perfeito para aprender:
-
-1. **Python Fundamentals**
-   - Funções modulares
-   - Tratamento de exceções
-   - Estruturas de dados (dicts, lists)
-   - String manipulation
-
-2. **Banco de Dados**
-   - SQLite
-   - SQL básico (CREATE, INSERT, SELECT, UPDATE, DELETE)
-   - Parameterização (SQL injection prevention)
-   - row_factory para acesso por nome
-
-3. **Streamlit**
-   - Componentes (input, button, form)
-   - Session state e navegação
-   - Layout (columns, containers)
-   - Download e upload
-
-4. **PDF Generation**
-   - ReportLab canvas
-   - Posicionamento de elementos
-   - Fontes e cores
-
-5. **Testing**
-   - unittest framework
-   - Isolamento de dados em testes
-   - Monkey patching
-   - Test fixtures
-
-6. **Design Patterns**
-   - Separação de responsabilidades
-   - MVC (Model-View-Controller)
-   - Factory pattern (gerar números)
-
----
-
-## 🐛 Troubleshooting
-
-### "Módulo não encontrado"
-
-```bash
-pip install -r requirements.txt
-```
-
-### "Porta 8501 em uso"
-
-```bash
-streamlit run app.py --server.port 8502
-```
-
-### "Banco de dados corrompido"
-
-Simplesmente delete `recibos.db` - será recriado automaticamente.
-
-### "PDF não é gerado"
-
-Verifique se existe pasta `recibos_pdf/` e se possui permissões de escrita.
-
----
-
-## 📈 Próximas Funcionalidades (Ideias)
-
-- [ ] Gráficos com Plotly/Matplotlib
-- [ ] Filtros avançados por data/forma de pagamento
-- [ ] Exportar em CSV
-- [ ] Backup automático do banco
-- [ ] Criptografia de dados sensíveis
-- [ ] Multi-usuário com login
-- [ ] Temas claro/escuro
-- [ ] Impressão de lista de recibos
+[GitHub — Recibo Fácil](https://github.com/nicolemaranhao/gerador-recibos)
 
 ---
 
 ## 📄 Licença
 
-Este projeto é de código aberto e pode ser usado livremente para aprendizado e portfólio.
-
----
-
-## 👨‍💻 Desenvolvedor
-
-Projeto criado para demonstrar habilidades em Python, Streamlit, SQLite e desenvolvimento full-stack.
-
-**Últimas atualizações:**
-
-- v1.0 (2026-08-31): Versão completa com 6 páginas, testes automatizados e funcionalidades CRUD
+Projeto desenvolvido para fins de aprendizado, portfólio e demonstração de conhecimentos em desenvolvimento de software.
