@@ -1,0 +1,15 @@
+# Ambiente virtual
+.venv/
+
+# Banco de dados local
+recibos.db
+
+# PDFs gerados
+recibos_pdf/
+
+# Cache do Python
+__pycache__/
+*.pyc
+
+# Configurações do Streamlit
+.streamlit/secrets.toml
